@@ -1,7 +1,7 @@
 # BioQCore Security Policy
 
 ## Vulnerability Reporting
-If you discover a vulnerability, please report to: **security@bioqcore.org**.
+If you discover a vulnerability, please report to: **security@bioqcore.org**.  
 We will respond within 48 hours and work to fix the issue.
 
 ## Protection measures
