@@ -1,10 +1,11 @@
 # BioQCore Security Policy
 
-## Vulnerability reporting
-If you encounter vulnerabilities, please contact security@bioqcore.org
+## Vulnerability Reporting
+If you discover a vulnerability, please report to: **security@bioqcore.org**.  
+We will respond within 48 hours and work to fix the issue.
 
-## Security measures
-- Regular dependency updates
-- Automatic code scanning
-- HTTPS enforcement
-- CSP headers
+## Protection measures
+- Daily automated vulnerability scans via GitHub Actions.
+- Use HTTPS (TLS 1.3) for all connections.
+- Content Security Policy (CSP) to protect against XSS.
+- Regular key rotation and dependency checking.
