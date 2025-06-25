@@ -1,0 +1,38 @@
+name: Security Scan
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 0 * * *' # Every day at midnight
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Run OWASP ZAP Scan
+        uses: zaproxy/action-baseline@v0.6.0
+        with:
+          target: 'https://bioqcore.org'
+          fail_action: true
+          
+      - name: Dependency Check
+        uses: dependency-check/action@v3
+        with:
+          project: 'bioqcore-website'
+          path: 'src'
+          
+      - name: Notify on Failure
+        if: ${{ failure() }}
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const email = 'security@bioqcore.org';
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: 'Security Scan Failed',
+              body: `Critical vulnerability detected. Check scan results. Contact: ${email}`,
+            });
