@@ -1,6 +1,6 @@
 # | BioQCore --> Humanitarian Mission |
 
-[![Security Scan](https://github.com/bioqcore-org/bioqcore-org.github.io/actions/workflows/security.yml/badge.svg)](https://github.com/bioqcore-org/bioqcore-org.github.io/actions)
+[![Security Scan](https://github.com/cryptoinsider1/bioqcore.org.github.io/actions/workflows/security.yml/badge.svg)](https://github.com/cryptoinsider1/bioqcore.org.github.io/actions)
 
 Official website of BioQCore, a consortium created to support humanitarian initiatives in pediatric medicine.
 
