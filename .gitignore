@@ -2,6 +2,8 @@
 .env
 *.key
 *.pem
+*.env.local
+*.env.*.local
 
 # System files
 .DS_Store
@@ -10,3 +12,5 @@ Thumbs.db
 # Logs and cache
 *.log
 .cache/
+node_modules/
+dist/
