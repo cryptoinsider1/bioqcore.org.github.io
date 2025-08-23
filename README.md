@@ -8,7 +8,11 @@ Official website of BioQCore, a consortium created to support humanitarian initi
 - **Domain**: [bioqcore.org](https://bioqcore.org)
 - **Hosting**: GitHub Pages
 - **Technology**: HTML5, CSS3, JavaScript
-- **Security**: OWASP ZAP, HTTPS, CSP
+## Security Status
+- **HTTPS**: Enforced with automatic redirect
+- **CSP**: Implemented with strict policies
+- **XSS Protection**: Client-side sanitization
+- **Regular Scans**: Daily OWASP ZAP scans
 
 ## Installation and Startup
 1. Clone repository:
