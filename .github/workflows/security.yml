@@ -20,7 +20,7 @@ jobs:
         uses: zaproxy/action-baseline@v0.14.0
         with:
           target: 'https://bioqcore.org'
-          fail_action: false  # Set to true after fixing critical issues
+          fail_action: false
           rules_file_name: '.zap-rules.tsv'
           cmd_options: '-a'
           
@@ -30,12 +30,23 @@ jobs:
           name: zap-report
           path: zap-report.md
           
-      - name: Parse and Report ZAP Results
+      - name: Analyze Results
         run: |
-          # Count critical and high alerts
-          ALERT_COUNT=$(grep -c "High\|Medium" zap-report.md || true)
-          if [ "$ALERT_COUNT" -gt "5" ]; then
-            echo "Too many security alerts: $ALERT_COUNT"
+          # Считаем только критические и высокоуровневые предупреждения
+          CRITICAL_COUNT=$(grep -c "High" zap-report.md || true)
+          MEDIUM_COUNT=$(grep -c "Medium" zap-report.md || true)
+          
+          echo "Found $CRITICAL_COUNT critical and $MEDIUM_COUNT medium alerts"
+          
+          # Если есть критические проблемы - падаем
+          if [ "$CRITICAL_COUNT" -gt "0" ]; then
+            echo "Critical vulnerabilities found!"
+            exit 1
+          fi
+          
+          # Для medium предупреждений более мягкая проверка
+          if [ "$MEDIUM_COUNT" -gt "5" ]; then
+            echo "Too many medium risk vulnerabilities"
             exit 1
           fi
           
@@ -47,6 +58,6 @@ jobs:
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: 'Security Scan Results - Action Required',
-              body: `ZAP scan completed with findings. Please check the uploaded report.`
+              title: 'Security Scan Completed with Findings',
+              body: `ZAP scan completed. Please check the uploaded report for details.`
             });
