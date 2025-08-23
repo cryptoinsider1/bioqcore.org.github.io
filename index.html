@@ -1,15 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self'; 
+                   script-src 'self' 'unsafe-inline'; 
+                   style-src 'self' 'unsafe-inline'; 
+                   img-src 'self' data: https:;
+                   base-uri 'none';
+                   frame-ancestors 'none'">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
     <title>BioQCore | Ethical Innovation</title>
     <style>
-        body { font-family: Arial; text-align: center; padding: 50px; }
-        h1 { color: #2c3e50; }
+        body { 
+            font-family: Arial, sans-serif; 
+            text-align: center; 
+            padding: 50px; 
+            line-height: 1.6;
+        }
+        h1 { 
+            color: #2c3e50; 
+            margin-bottom: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
     </style>
 </head>
 <body>
-    <h1>Welcome BioQCore Consortium!</h1>
-    <p>Global breakthrough in pediatric medicine</p>
-    <p>Contact: contact@bioqcore.org</p>
+    <div class="container">
+        <h1>Welcome to BioQCore Consortium!</h1>
+        <p>Global breakthrough in pediatric medicine</p>
+        <p>Contact: <span data-sanitize>contact@bioqcore.org</span></p>
+    </div>
+
+    <script src="src/js/security.js"></script>
 </body>
 </html>
