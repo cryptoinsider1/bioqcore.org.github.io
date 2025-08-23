@@ -5,30 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" 
           content="default-src 'self'; 
-                   script-src 'self' 'unsafe-inline'; 
-                   style-src 'self' 'unsafe-inline'; 
-                   img-src 'self' data: https:;
+                   script-src 'self'; 
+                   style-src 'self';
+                   img-src 'self' data:;
                    base-uri 'none';
-                   frame-ancestors 'none'">
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
+                   frame-ancestors 'none';
+                   form-action 'self';
+                   object-src 'none'">
     <title>BioQCore | Ethical Innovation</title>
-    <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            text-align: center; 
-            padding: 50px; 
-            line-height: 1.6;
-        }
-        h1 { 
-            color: #2c3e50; 
-            margin-bottom: 20px;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-    </style>
+    <link rel="stylesheet" href="src/css/main.css">
 </head>
 <body>
     <div class="container">
