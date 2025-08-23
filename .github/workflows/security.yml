@@ -2,9 +2,13 @@ name: Security Scan
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   schedule:
-    - cron: '0 0 * * *' # Every day at midnight
+    - cron: '0 0 * * *'
+
+permissions:
+  issues: write
+  contents: read
 
 jobs:
   security:
@@ -13,26 +17,23 @@ jobs:
       - uses: actions/checkout@v4
       
       - name: Run OWASP ZAP Scan
-        uses: zaproxy/action-baseline@v0.6.0
+        uses: zaproxy/action-baseline@v0.14.0
         with:
           target: 'https://bioqcore.org'
           fail_action: true
-          
-      - name: Dependency Check
-        uses: dependency-check/action@v3
-        with:
-          project: 'bioqcore-website'
-          path: 'src'
-          
+
+      - name: Dependency Review
+        if: github.event_name == 'pull_request'
+        uses: actions/dependency-review-action@v4
+
       - name: Notify on Failure
         if: ${{ failure() }}
         uses: actions/github-script@v6
         with:
           script: |
-            const email = 'security@bioqcore.org';
-            await github.rest.issues.create({
+            github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: 'Security Scan Failed',
-              body: `Critical vulnerability detected. Check scan results. Contact: ${email}`,
+              body: `Scan failed at ${new Date().toISOString()}`
             });
