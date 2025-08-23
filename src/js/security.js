@@ -1,18 +1,23 @@
-// XSS protection
+// XSS protection with improved sanitization
 document.addEventListener('DOMContentLoaded', () => {
   const sanitize = (str) => {
-    const div = document.createElement('div');
-    div.textContent = str;
-    return div.innerHTML;
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#x27;');
   };
 
-// Dynamic content sanitization
   document.querySelectorAll('[data-sanitize]').forEach(el => {
-    el.innerHTML = sanitize(el.textContent);
+    if (el.textContent !== el.innerHTML) {
+      el.innerHTML = sanitize(el.textContent);
+    }
   });
 });
 
-// Redirect to HTTPS
-if (location.protocol !== 'https:' && location.hostname !== 'localhost') {
+// HTTPS redirect with better localhost detection
+if (location.protocol !== 'https:' && 
+    !['localhost', '127.0.0.1'].includes(location.hostname.split(':')[0])) {
   location.replace(`https:${location.href.substring(location.protocol.length)}`);
 }
