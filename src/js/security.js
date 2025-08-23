@@ -1,23 +1,43 @@
-// XSS protection with improved sanitization
+// Enhanced security functions
 document.addEventListener('DOMContentLoaded', () => {
-  const sanitize = (str) => {
-    return str
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#x27;');
-  };
+    // Improved sanitization function
+    const sanitize = (str) => {
+        const div = document.createElement('div');
+        div.textContent = str;
+        return div.innerHTML;
+    };
 
-  document.querySelectorAll('[data-sanitize]').forEach(el => {
-    if (el.textContent !== el.innerHTML) {
-      el.innerHTML = sanitize(el.textContent);
+    // Sanitize all elements with data-sanitize attribute
+    document.querySelectorAll('[data-sanitize]').forEach(el => {
+        if (el.textContent) {
+            el.innerHTML = sanitize(el.textContent);
+        }
+    });
+
+    // Add security headers dynamically where possible
+    const securityHeaders = {
+        'X-Content-Type-Options': 'nosniff',
+        'X-Frame-Options': 'DENY',
+        'Referrer-Policy': 'strict-origin-when-cross-origin'
+    };
+
+    // Note: These headers are set here but have limited effect
+    // as they need to be set at server level for full protection
+    for (const [header, value] of Object.entries(securityHeaders)) {
+        try {
+            if (!document[header]) {
+                document[header] = value;
+            }
+        } catch (e) {
+            console.log(`Cannot set ${header} header client-side`);
+        }
     }
-  });
 });
 
-// HTTPS redirect with better localhost detection
+// Enhanced HTTPS redirect
 if (location.protocol !== 'https:' && 
-    !['localhost', '127.0.0.1'].includes(location.hostname.split(':')[0])) {
-  location.replace(`https:${location.href.substring(location.protocol.length)}`);
+    location.hostname !== 'localhost' && 
+    location.hostname !== '127.0.0.1' &&
+    !location.hostname.startsWith('192.168.')) {
+    location.replace(`https:${location.href.substring(location.protocol.length)}`);
 }
