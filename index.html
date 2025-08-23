@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" 
-          content="default-src 'self'; 
-                   script-src 'self'; 
-                   style-src 'self';
+          content="default-src 'self';
+                   script-src 'self';
+                   style-src 'self' 'unsafe-inline';
                    img-src 'self' data:;
                    base-uri 'none';
-                   frame-ancestors 'none';
                    form-action 'self';
                    object-src 'none'">
+    <!-- Убрана неподдерживаемая директива frame-ancestors из meta CSP -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>BioQCore | Ethical Innovation</title>
     <link rel="stylesheet" href="src/css/main.css">
 </head>
@@ -23,5 +24,14 @@
     </div>
 
     <script src="src/js/security.js"></script>
+    
+    <!-- Скрипт для защиты от кликджекинга -->
+    <script>
+        if (self === top) {
+            document.documentElement.style.display = 'block';
+        } else {
+            top.location = self.location;
+        }
+    </script>
 </body>
 </html>
