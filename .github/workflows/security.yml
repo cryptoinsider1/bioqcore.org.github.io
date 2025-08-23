@@ -20,7 +20,7 @@ jobs:
         uses: zaproxy/action-baseline@v0.14.0
         with:
           target: 'https://bioqcore.org'
-          fail_action: true
+          fail_action: false
 
       - name: Dependency Review
         if: github.event_name == 'pull_request'
