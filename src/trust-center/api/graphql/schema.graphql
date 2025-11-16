@@ -1,0 +1,94 @@
+schema {
+  query: Query
+  mutation: Mutation
+}
+
+# ----------------
+#   HEALTH API
+# ----------------
+
+type Query {
+  health: HealthStatus!
+  resolveDID(id: ID!): DIDDocument
+}
+
+type HealthStatus {
+  status: String!
+  uptimeSec: Int!
+  version: String!
+  pqcSupport: [String!]!
+  ca: CAStatus!
+}
+
+type CAStatus {
+  intermediate: String!
+  issuing: String!
+  crlLastUpdate: String
+}
+
+# ----------------
+#   CERTIFICATE
+# ----------------
+
+type Mutation {
+  issueCertificate(input: CSRInput!): CertificateResponse!
+  registerDID(input: DIDInput!): DIDResponse!
+  auditAppend(input: AuditInput!): AuditResponse!
+}
+
+input CSRInput {
+  csr: String!
+  profile: String!     # server | client | agent | mobile
+  pqc: Boolean
+}
+
+type CertificateResponse {
+  certificate: String!
+  chain: [String!]!
+  pqcCertificate: String
+}
+
+# ----------------
+#   DID
+# ----------------
+
+input DIDInput {
+  publicKey: String!
+  type: String!
+  metadata: JSON
+}
+
+type DIDResponse {
+  did: ID!
+  documentUrl: String!
+}
+
+type DIDDocument {
+  id: ID!
+  context: String!
+  method: [VerificationMethod!]!
+}
+
+type VerificationMethod {
+  id: ID!
+  type: String!
+  publicKey: String!
+}
+
+# ----------------
+#   AUDIT
+# ----------------
+
+input AuditInput {
+  actor: String!
+  action: String!
+  target: String
+  timestamp: String!
+  details: JSON
+}
+
+type AuditResponse {
+  status: String!
+  entryId: String!
+  merkleRoot: String!
+}

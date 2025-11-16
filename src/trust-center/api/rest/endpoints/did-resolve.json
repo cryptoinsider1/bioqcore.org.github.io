@@ -1,0 +1,11 @@
+{
+  "id": "did:bioq:12345",
+  "context": "https://www.w3.org/ns/did/v1",
+  "method": [
+    {
+      "id": "did:bioq:12345#key-1",
+      "type": "Ed25519VerificationKey2020",
+      "publicKey": "ed25519:XYZ..."
+    }
+  ]
+}

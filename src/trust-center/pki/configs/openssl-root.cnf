@@ -1,0 +1,12 @@
+[ ca ]
+default_ca = CA_default
+
+[ CA_default ]
+dir             = ./root
+certificate     = $dir/certs/root.pem
+private_key     = $dir/private/root.key
+new_certs_dir   = $dir/newcerts
+database        = $dir/index.txt
+
+default_md      = sha256
+default_days    = 3650

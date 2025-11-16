@@ -1,0 +1,80 @@
+openapi: 3.1.0
+info:
+  title: BioQCore Trust Center API
+  version: "1.0.0"
+  description: >
+    Trust Center issuing CA, DID registry, audit subsystem and PQC support.
+
+servers:
+  - url: https://trust.bioqcore.org
+
+paths:
+  /health:
+    get:
+      summary: Health status
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Health"
+
+  /ca/issue:
+    post:
+      summary: Issue certificate
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CSRRequest"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CertificateResponse"
+
+  /did/register:
+    post:
+      summary: Register DID
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DIDRegister"
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DIDResponse"
+
+  /did/{id}:
+    get:
+      summary: Resolve DID
+      parameters:
+        - name: id
+          in: path
+          required: true
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DIDDocument"
+
+components:
+  schemas:
+    Health:
+      type: object
+      properties:
+        status: { type: string }
+        uptime_sec: { type: integer }
+        version: { type: string }
+    CSRRequest:
+      $ref: "schemas/csr_request.schema.json"
+    DIDRegister:
+      $ref: "schemas/did_register.schema.json"
+    AuditEntry:
+      $ref: "schemas/audit_entry.schema.json"

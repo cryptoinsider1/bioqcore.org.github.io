@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PQCMetadata",
+  "type": "object",
+  "properties": {
+    "algorithm": {
+      "type": "string",
+      "enum": ["Kyber768", "Dilithium2", "Hybrid-ECDSA-Kyber"]
+    },
+    "nistLevel": { "type": "integer" },
+    "hybrid": { "type": "boolean" }
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "csr": "-----BEGIN CERTIFICATE REQUEST-----...",
+  "profile": "server",
+  "pqc": true
+}

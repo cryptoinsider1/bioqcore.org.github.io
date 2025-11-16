@@ -1,0 +1,11 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "required": ["actor", "action", "timestamp"],
+  "properties": {
+    "actor": { "type": "string" },
+    "action": { "type": "string" },
+    "target": { "type": "string" },
+    "timestamp": { "type": "string" },
+    "details": { "type": "object" }
+  }
+}

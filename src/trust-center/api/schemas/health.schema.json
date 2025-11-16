@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HealthSchema",
+  "type": "object",
+  "required": ["status", "version"],
+  "properties": {
+    "status": { "type": "string" },
+    "version": { "type": "string" },
+    "uptime_sec": { "type": "integer" },
+    "pqc_support": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

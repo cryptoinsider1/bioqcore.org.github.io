@@ -1,0 +1,5 @@
+{
+  "keyUsage": ["digitalSignature", "keyAgreement"],
+  "extKeyUsage": ["clientAuth"],
+  "validityDays": 180
+}

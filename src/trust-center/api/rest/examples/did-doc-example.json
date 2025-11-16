@@ -1,0 +1,11 @@
+{
+  "id": "did:bioq:78910",
+  "context": "https://w3id.org/security/v2",
+  "method": [
+    {
+      "id": "did:bioq:78910#mobile",
+      "type": "Ed25519VerificationKey2020",
+      "publicKey": "ed25519:ABCDEF..."
+    }
+  ]
+}

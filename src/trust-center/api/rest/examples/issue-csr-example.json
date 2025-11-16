@@ -1,0 +1,5 @@
+{
+  "csr": "-----BEGIN CERTIFICATE REQUEST-----\nMIIB...==\n-----END CERTIFICATE REQUEST-----",
+  "profile": "client",
+  "pqc": false
+}

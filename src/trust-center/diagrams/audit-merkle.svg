@@ -1,0 +1,45 @@
+<svg width="880" height="420" xmlns="http://www.w3.org/2000/svg" font-family="Inter" font-size="14">
+  <rect width="880" height="420" fill="#ffffff"/>
+
+  <!-- Leaves -->
+  <text x="440" y="40" text-anchor="middle" font-weight="bold">MERKLE TREE — AUDIT LOG</text>
+
+  <!-- Level 0 -->
+  <rect x="60" y="300" width="120" height="60" fill="#e8f0ff" stroke="#333"/>
+  <text x="120" y="335" text-anchor="middle">Entry A</text>
+  
+  <rect x="220" y="300" width="120" height="60" fill="#e8f0ff" stroke="#333"/>
+  <text x="280" y="335" text-anchor="middle">Entry B</text>
+  
+  <rect x="380" y="300" width="120" height="60" fill="#e8f0ff" stroke="#333"/>
+  <text x="440" y="335" text-anchor="middle">Entry C</text>
+
+  <rect x="540" y="300" width="120" height="60" fill="#e8f0ff" stroke="#333"/>
+  <text x="600" y="335" text-anchor="middle">Entry D</text>
+
+  <!-- Level 1 Hashes -->
+  <rect x="140" y="180" width="180" height="60" fill="#f3f3f3" stroke="#333"/>
+  <text x="230" y="215" text-anchor="middle">H( A + B )</text>
+
+  <rect x="460" y="180" width="180" height="60" fill="#f3f3f3" stroke="#333"/>
+  <text x="550" y="215" text-anchor="middle">H( C + D )</text>
+
+  <!-- Level 2 Root -->
+  <rect x="320" y="60" width="240" height="60" fill="#fdf5e6" stroke="#333"/>
+  <text x="440" y="95" text-anchor="middle" font-weight="bold">MERKLE ROOT</text>
+
+  <!-- Arrows -->
+  <line x1="120" y1="300" x2="230" y2="240" stroke="#333" marker-end="url(#arrow)"/>
+  <line x1="280" y1="300" x2="230" y2="240" stroke="#333" marker-end="url(#arrow)"/>
+  <line x1="440" y1="300" x2="550" y2="240" stroke="#333" marker-end="url(#arrow)"/>
+  <line x1="600" y1="300" x2="550" y2="240" stroke="#333" marker-end="url(#arrow)"/>
+
+  <line x1="230" y1="180" x2="440" y2="120" stroke="#333" marker-end="url(#arrow)"/>
+  <line x1="550" y1="180" x2="440" y2="120" stroke="#333" marker-end="url(#arrow)"/>
+
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#333"/>
+    </marker>
+  </defs>
+</svg>

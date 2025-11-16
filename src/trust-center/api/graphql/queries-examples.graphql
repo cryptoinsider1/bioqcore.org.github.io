@@ -1,0 +1,52 @@
+# HEALTH CHECK
+query {
+  health {
+    status
+    uptimeSec
+    version
+    pqcSupport
+    ca {
+      intermediate
+      issuing
+      crlLastUpdate
+    }
+  }
+}
+
+# CERTIFICATE ISSUING (example CSR)
+mutation {
+  issueCertificate(input: {
+    csr: "-----BEGIN CERTIFICATE REQUEST-----...",
+    profile: "server",
+    pqc: true
+  }) {
+    certificate
+    chain
+    pqcCertificate
+  }
+}
+
+# REGISTER DID
+mutation {
+  registerDID(input: {
+    publicKey: "ed25519:AbCdEf...",
+    type: "BioQCoreIdentity"
+    metadata: { role: "agent" }
+  }) {
+    did
+    documentUrl
+  }
+}
+
+# RESOLVE DID
+query {
+  resolveDID(id: "did:bioq:12345") {
+    id
+    context
+    method {
+      id
+      type
+      publicKey
+    }
+  }
+}

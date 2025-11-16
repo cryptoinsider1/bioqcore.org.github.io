@@ -1,0 +1,9 @@
+{
+  "actor": "system",
+  "action": "CERT_ISSUED",
+  "timestamp": "2025-01-09T10:00:00Z",
+  "target": "CN=bioqcore.test",
+  "details": {
+    "serial": "01A9DF3299"
+  }
+}

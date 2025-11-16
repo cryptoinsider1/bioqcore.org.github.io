@@ -1,0 +1,4 @@
+# BioQCore Trust Center — CRL index
+# DO NOT DELETE
+# Format: OpenSSL index
+V       250101000000Z       01      unknown /CN=bioqcore-intermediate

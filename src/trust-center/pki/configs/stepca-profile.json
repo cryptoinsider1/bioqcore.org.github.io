@@ -1,0 +1,10 @@
+{
+  "authority": {
+    "provisioners": [
+      {
+        "name": "bioqcore",
+        "type": "JWK"
+      }
+    ]
+  }
+}

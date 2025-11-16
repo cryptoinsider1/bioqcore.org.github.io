@@ -1,0 +1,5 @@
+{
+  "algorithm": "ECDSA-P256 + Kyber768",
+  "nist_level": 3,
+  "hybrid": true
+}

@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CSRRequest",
+  "type": "object",
+  "required": ["csr", "profile"],
+  "properties": {
+    "csr": { "type": "string" },
+    "profile": {
+      "type": "string",
+      "enum": ["server", "client", "agent", "mobile"]
+    },
+    "pqc": { "type": "boolean" }
+  }
+}

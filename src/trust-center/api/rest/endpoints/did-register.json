@@ -1,0 +1,8 @@
+{
+  "publicKey": "ed25519:AbCDEF12345",
+  "type": "BioQCoreIdentity",
+  "metadata": {
+    "role": "agent",
+    "lang": "en"
+  }
+}

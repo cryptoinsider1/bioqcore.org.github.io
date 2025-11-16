@@ -1,0 +1,9 @@
+[ ca ]
+default_ca = issuing_ca
+
+[ issuing_ca ]
+dir             = ./issuing
+certificate     = $dir/certs/issuing.pem
+private_key     = $dir/private/issuing.key
+default_days    = 365
+default_md      = sha256

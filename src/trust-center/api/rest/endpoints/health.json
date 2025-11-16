@@ -1,0 +1,11 @@
+{
+  "status": "OK",
+  "version": "1.0.0",
+  "uptime_sec": 12345,
+  "pqc_support": ["Kyber768", "Dilithium2"],
+  "ca": {
+    "intermediate": "active",
+    "issuing": "active",
+    "crl_last_update": "2025-01-01T00:00:00Z"
+  }
+}
