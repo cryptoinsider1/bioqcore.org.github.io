@@ -1,0 +1,20 @@
+name: Link Checker
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    - cron: '0 6 * * *'
+
+jobs:
+  linkChecker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Broken Link Checker
+        uses: lycheeverse/lychee-action@v1.8.0
+        with:
+          args: --verbose --no-progress ./ 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

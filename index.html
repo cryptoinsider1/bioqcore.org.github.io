@@ -1,37 +1,288 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" 
-          content="default-src 'self';
-                   script-src 'self';
-                   style-src 'self' 'unsafe-inline';
-                   img-src 'self' data:;
-                   base-uri 'none';
-                   form-action 'self';
-                   object-src 'none'">
-    <!-- Убрана неподдерживаемая директива frame-ancestors из meta CSP -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <title>BioQCore | Ethical Innovation</title>
-    <link rel="stylesheet" href="src/css/main.css">
+  <meta charset="UTF-8" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
+  <title>BioQCore — Trust-Centric Research & Infrastructure Consortium</title>
+  <meta
+    name="description"
+    content="BioQCore is a trust-centric humanitarian & scientific consortium, building next-generation infrastructure for medicine, AI, cryptography and resilient ecosystems."
+  />
+  <link rel="stylesheet" href="src/css/main.css" />
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to BioQCore Consortium!!</h1>
-        <p>Global breakthrough in pediatric medicine</p>
-        <p>Contact: <span data-sanitize>contact@bioqcore.org</span></p>
+  <header class="bq-header">
+    <div class="bq-container bq-header-inner">
+      <div class="bq-logo">BioQCore</div>
+      <nav class="bq-nav">
+        <a href="#mission">Mission</a>
+        <a href="#pillars">Pillars</a>
+        <a href="#trust-fabric">Trust Fabric</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <script src="src/js/security.js"></script>
-    
-    <!-- Скрипт для защиты от кликджекинга -->
-    <script>
-        if (self === top) {
-            document.documentElement.style.display = 'block';
-        } else {
-            top.location = self.location;
-        }
-    </script>
+  <main>
+    <!-- Hero -->
+    <section class="bq-section bq-hero" id="top">
+      <div class="bq-container bq-hero-content">
+        <div class="bq-hero-text">
+          <h1>BioQCore<br /><span>Trust-First Infrastructure for Human-Centric Futures</span></h1>
+          <p>
+            BioQCore — гуманитарно-научный консорциум, который соединяет
+            медицину, квантово-устойчивую криптографию, AI-системы и
+            распределённые экосистемы в единую архитектуру доверия.
+          </p>
+          <div class="bq-hero-actions">
+            <a href="#architecture" class="bq-btn bq-btn-primary">Architecture</a>
+            <a href="#roadmap" class="bq-btn bq-btn-ghost">Roadmap</a>
+          </div>
+          <p class="bq-hero-note">
+            Phase 0 · Research & Design · Prototype of BioQCore Trust Fabric ·
+            Edge: MikroTik BR5009 · Vault: Raspberry Pi + Encrypted SSD
+          </p>
+        </div>
+        <div class="bq-hero-panel">
+          <div class="bq-status-card">
+            <h2>Platform Status</h2>
+            <ul>
+              <li><span class="bq-dot bq-dot-active"></span> Public Site · Online</li>
+              <li><span class="bq-dot"></span> Trust Center · In Design</li>
+              <li><span class="bq-dot"></span> iOS Agent · Prototype</li>
+              <li><span class="bq-dot"></span> PKI & DID · Lab Phase</li>
+            </ul>
+            <button id="check-trust-center" class="bq-btn bq-btn-small">
+              Check Trust Center (ping)
+            </button>
+            <div id="trust-center-status" class="bq-status-message">
+              Not yet connected · Design phase
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission -->
+    <section class="bq-section" id="mission">
+      <div class="bq-container">
+        <h2>Mission</h2>
+        <p class="bq-lead">
+          Создать живую инфраструктуру доверия, где медицинские данные, AI-модели,
+          криптографические ключи и социальные экосистемы работают не
+          как разрозненные сервисы, а как единый ответственный организм.
+        </p>
+        <div class="bq-grid bq-grid-3">
+          <div class="bq-card">
+            <h3>Human-Centric</h3>
+            <p>
+              Фокус на детях, пациентах и исследователях. BioQCore стремится
+              сделать сложные технологические системы прозрачными, этичными и
+              безопасными для реальных людей.
+            </p>
+          </div>
+          <div class="bq-card">
+            <h3>Trust by Design</h3>
+            <p>
+              Криптография, Zero-Trust, Post-Quantum-подходы и формальные модели
+              не добавляются “сверху” — они вшиты в архитектуру ядра.
+            </p>
+          </div>
+          <div class="bq-card">
+            <h3>Research & Practice</h3>
+            <p>
+              Мост между академическими идеями и инженерной реализацией.
+              От теории информации, нейробиологии и квантовых моделей —
+              до кода, который можно запустить в продакшене.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillars -->
+    <section class="bq-section bq-section-alt" id="pillars">
+      <div class="bq-container">
+        <h2>Core Pillars</h2>
+        <div class="bq-grid bq-grid-4">
+          <div class="bq-pill">
+            <h3>Medical & BioTech</h3>
+            <p>Поддержка диагностики, онкологии, нейровизуализации и биоинформатики.</p>
+          </div>
+          <div class="bq-pill">
+            <h3>AI & Cognitive Engines</h3>
+            <p>Этичные AI-агенты, интерпретируемые модели, когнитивные интерфейсы.</p>
+          </div>
+          <div class="bq-pill">
+            <h3>Cryptography & PKI</h3>
+            <p>Post-Quantum PKI, DID, Trust Center, распределённая идентичность.</p>
+          </div>
+          <div class="bq-pill">
+            <h3>Resilient Ecosystems</h3>
+            <p>Инфраструктуры для консорциумов, лабораторий, университетов и стартапов.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Fabric -->
+    <section class="bq-section" id="trust-fabric">
+      <div class="bq-container">
+        <h2>BioQCore Trust Fabric</h2>
+        <p class="bq-lead">
+          Trust Fabric — это слой, где соединяются криптография, инфраструктура и
+          человеческая ответственность. Он связывает Root CA, Trust Center, Edge-узлы
+          и клиенты (iOS, веб, исследовательские платформы).
+        </p>
+        <div class="bq-grid bq-grid-3 bq-trust-grid">
+          <div class="bq-card bq-card-outline">
+            <h3>Root & Vault Layer</h3>
+            <ul>
+              <li>Root CA на Raspberry Pi + зашифрованный SSD</li>
+              <li>Оффлайн-режим · минимальное включение</li>
+              <li>Хранение мастер-ключей и политик</li>
+            </ul>
+          </div>
+          <div class="bq-card bq-card-outline">
+            <h3>Trust Center Layer</h3>
+            <ul>
+              <li>Intermediate CA & issuing CA</li>
+              <li>GraphQL / REST Trust API</li>
+              <li>DID Registry · Audit · CRL / OCSP</li>
+            </ul>
+          </div>
+          <div class="bq-card bq-card-outline">
+            <h3>Edge & Client Layer</h3>
+            <ul>
+              <li>MikroTik BR5009 как Edge-узел</li>
+              <li>VPN, TLS-терминация, mTLS</li>
+              <li>iOS BioQCore App · Web Clients</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ecosystem -->
+    <section class="bq-section bq-section-alt" id="ecosystem">
+      <div class="bq-container">
+        <h2>Connected Ecosystem</h2>
+        <p class="bq-lead">
+          BioQCore не живёт в вакууме. Он соединяется с другими контурами — от
+          блокчейн-инфраструктур до космических исследовательских проектов.
+        </p>
+        <div class="bq-grid bq-grid-3">
+          <div class="bq-card">
+            <h3>WWBTC</h3>
+            <p>
+              WideWorldBlockchainTechnologiesCommunity — слой распределённых
+              идентичностей, токенизации и zk-инфраструктуры, интегрируемый
+              с Trust Fabric BioQCore.
+            </p>
+          </div>
+          <div class="bq-card">
+            <h3>CosmicFutureToDay</h3>
+            <p>
+              Космический вектор: долгосрочная стратегия для науки, инженерии,
+              устойчивой экономики и культурных проектов.
+            </p>
+          </div>
+          <div class="bq-card">
+            <h3>Research Alliances</h3>
+            <p>
+              Партнёрства с лабораториями, университетами и клиниками для
+              совместных исследований и пилотных проектов.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture (docs hook) -->
+    <section class="bq-section" id="architecture">
+      <div class="bq-container">
+        <h2>Architecture & Docs</h2>
+        <p class="bq-lead">
+          Архитектура оформляется как живой документ. Техническая документация,
+          схемы и дорожные карты доступны в открытом формате.
+        </p>
+        <div class="bq-doc-links">
+          <a href="docs/ARCHITECTURE.html" class="bq-doc-link">System Architecture (soon)</a>
+          <a href="docs/PLATFORM_ROADMAP.html" class="bq-doc-link">Platform Roadmap (soon)</a>
+          <a href="https://github.com/..." class="bq-doc-link">GitHub (internal prototype)</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roadmap -->
+    <section class="bq-section bq-section-alt" id="roadmap">
+      <div class="bq-container">
+        <h2>Roadmap · Phase 0 → Phase 3</h2>
+        <div class="bq-roadmap">
+          <div class="bq-roadmap-item">
+            <h3>Phase 0 — Foundations</h3>
+            <p>
+              Статический сайт, архитектурные документы, лабораторная PKI
+              (Root CA на Raspberry, Intermediate CA, первые эксперименты с
+              MikroTik и VPN).
+            </p>
+          </div>
+          <div class="bq-roadmap-item">
+            <h3>Phase 1 — Trust Center Prototype</h3>
+            <p>
+              BioQCore Trust Center: GraphQL API, issuing CA, интеграция с
+              iOS агентом и внутренними сервисами.
+            </p>
+          </div>
+          <div class="bq-roadmap-item">
+            <h3>Phase 2 — Ecosystem Integration</h3>
+            <p>
+              Связка с WWBTC, CosmicFutureToDay, подключение лабораторий и
+              партнёрских проектов.
+            </p>
+          </div>
+          <div class="bq-roadmap-item">
+            <h3>Phase 3 — Production-grade Consortium</h3>
+            <p>
+              Масштабируемая экосистема с чёткой PKI, аудитацией, отказоустойчивостью
+              и многоуровневой защитой.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="bq-section" id="contact">
+      <div class="bq-container">
+        <h2>Contact & Collaboration</h2>
+        <p class="bq-lead">
+          На текущем этапе BioQCore находится в фазе интенсивных исследований и
+          архитектурного дизайна. Если вы представляете лабораторию, университет,
+          клинику или технологическую компанию — потенциально возможны пилотные
+          проекты, совместные исследования и консорциумы.
+        </p>
+        <div class="bq-contact">
+          <p>Для связи и первых обсуждений:</p>
+          <p><strong>Email:</strong> contact@bioqcore.org (пример)</p>
+          <p><strong>PGP / Secure Channel:</strong> будет опубликован в Trust Center.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bq-footer">
+    <div class="bq-container bq-footer-inner">
+      <span>© BioQCore Consortium · Research & Infrastructure</span>
+      <span>Phase 0 · Draft Infrastructure</span>
+    </div>
+  </footer>
+
+  <script src="src/js/security.js"></script>
 </body>
 </html>

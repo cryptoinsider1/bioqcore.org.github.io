@@ -1,17 +1,78 @@
-# Confidential data
-.env
-*.key
-*.pem
-*.env.local
-*.env.*.local
+# --- BioQCore Web + Security Hardened .gitignore ---
 
-# System files
+# OS-specific
 .DS_Store
 Thumbs.db
 
-# Logs and cache
-.zap/
+# Logs / caches
 *.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
 .cache/
-node_modules/
+.zap/
+.zap-report/
+.tmp/
+temp/
 dist/
+build/
+
+# GitHub Actions artifacts
+*.zip
+*.tar.gz
+*.tgz
+
+# Node / JS dependencies (если в будущем добавишь)
+node_modules/
+
+# Local environment
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.crt
+
+# IDE & editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Eclipse (видел в предыдущих проектах)
+.project
+.settings/
+.classpath
+
+# Mac metadata
+._*
+
+# ZAP custom rule files
+zap_report.html
+zap-report.md
+.zap-rules.tsv
+
+# Jekyll disable marker
+.nojekyll
+
+# Generated docs
+src/js/docs/ru/
+src/js/docs/en/
+docs/
+out/
+site/
+
+# SVG/PNG temporary exports
+*.bak
+*.tmp
+
+# GitHub Pages artifacts
+*.map
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# BioQCore Web security
+src/js/security.min.js
+src/css/main.min.css
