@@ -1,7 +1,6 @@
 // --- BioQCore Web Security Layer v1.1 ---
 
 document.addEventListener("DOMContentLoaded", () => {
-    // strict sanitizer
     const sanitize = (str) =>
         str
             .replace(/&/g, "&amp;")
@@ -17,33 +16,32 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// --- HTTPS enforce (except local dev) ---
+// HTTPS redirect
 if (
     window.location.protocol !== "https:" &&
     !["localhost", "127.0.0.1"].includes(window.location.hostname)
 ) {
-    window.location.replace(
+    location.replace(
         "https://" + window.location.href.replace(/^http:\/\//, "")
     );
 }
 
-// --- Future Trust Center Integration ---
-const TRUST_CENTER_ENDPOINT = "https://trust.bioqcore.org/health"; // placeholder
+// Trust Center placeholder
+const TRUST_CENTER_ENDPOINT = "https://trust.bioqcore.org/health";
 
 document.addEventListener("DOMContentLoaded", () => {
-    const checkBtn = document.getElementById("check-trust-center");
-    const status = document.getElementById("trust-center-status");
+    const btn = document.getElementById("check-trust-center");
+    const out = document.getElementById("trust-center-status");
+    if (!btn || !out) return;
 
-    if (!checkBtn || !status) return;
-
-    checkBtn.addEventListener("click", async () => {
-        status.textContent = "Checking Trust Center…";
-        status.style.color = "#a3a3a3";
+    btn.addEventListener("click", async () => {
+        out.textContent = "Checking Trust Center…";
+        out.style.color = "#a3a3a3";
 
         await new Promise((r) => setTimeout(r, 500));
 
-        status.textContent =
+        out.textContent =
             "Trust Center is not public — internal design & lab experiments.";
-        status.style.color = "#ff5f5f";
+        out.style.color = "#ff5f5f";
     });
 });

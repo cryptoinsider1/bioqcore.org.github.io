@@ -1,19 +1,18 @@
-name: HTML Validator
+name: HTML Validate
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
 
 jobs:
-  validate:
+  html-validate:
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v4
 
-      - name: HTML5 Validator
-        uses: Cyb3r-Jak3/html5validator-action@v1
-        with:
-          root: "."
-          blacklist: "node_modules"
+      - name: Install validator
+        run: sudo npm install -g html-validate
+
+      - name: Run HTML validation
+        run: html-validate "**/*.html" --config .htmlvalidate.json

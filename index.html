@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="/src/js/lang.js" defer></script>
   <meta charset="UTF-8" />
   <meta
     name="viewport"
@@ -35,19 +36,20 @@
         <div class="bq-hero-text">
           <h1>BioQCore<br /><span>Trust-First Infrastructure for Human-Centric Futures</span></h1>
           <p>
-            BioQCore — гуманитарно-научный консорциум, который соединяет
-            медицину, квантово-устойчивую криптографию, AI-системы и
-            распределённые экосистемы в единую архитектуру доверия.
+            BioQCore — гуманитарно-научный консорциум, соединяющий медицину,
+            квантово-устойчивую криптографию, AI-системы и распределённые экосистемы
+            в единую архитектуру доверия.
           </p>
           <div class="bq-hero-actions">
             <a href="#architecture" class="bq-btn bq-btn-primary">Architecture</a>
             <a href="#roadmap" class="bq-btn bq-btn-ghost">Roadmap</a>
           </div>
           <p class="bq-hero-note">
-            Phase 0 · Research & Design · Prototype of BioQCore Trust Fabric ·
+            Early Architecture · Research & Design · Trust Fabric Foundations ·
             Edge: MikroTik BR5009 · Vault: Raspberry Pi + Encrypted SSD
           </p>
         </div>
+
         <div class="bq-hero-panel">
           <div class="bq-status-card">
             <h2>Platform Status</h2>
@@ -74,31 +76,29 @@
         <h2>Mission</h2>
         <p class="bq-lead">
           Создать живую инфраструктуру доверия, где медицинские данные, AI-модели,
-          криптографические ключи и социальные экосистемы работают не
-          как разрозненные сервисы, а как единый ответственный организм.
+          криптографические ключи и социальные экосистемы работают не как отдельные
+          сервисы, а как единый ответственный организм.
         </p>
         <div class="bq-grid bq-grid-3">
           <div class="bq-card">
             <h3>Human-Centric</h3>
             <p>
-              Фокус на детях, пациентах и исследователях. BioQCore стремится
-              сделать сложные технологические системы прозрачными, этичными и
-              безопасными для реальных людей.
+              Фокус на детях, пациентах и исследователях. Сложные технологические
+              системы должны быть этичными, прозрачными и безопасными.
             </p>
           </div>
           <div class="bq-card">
             <h3>Trust by Design</h3>
             <p>
-              Криптография, Zero-Trust, Post-Quantum-подходы и формальные модели
-              не добавляются “сверху” — они вшиты в архитектуру ядра.
+              Криптография, Zero-Trust, Post-Quantum-подходы и формальные модели —
+              вшиты в архитектуру ядра, а не добавлены поверх.
             </p>
           </div>
           <div class="bq-card">
             <h3>Research & Practice</h3>
             <p>
-              Мост между академическими идеями и инженерной реализацией.
-              От теории информации, нейробиологии и квантовых моделей —
-              до кода, который можно запустить в продакшене.
+              Мост между академической наукой и инженерной реализацией: от теории
+              информации, нейробиологии и квантовых моделей — до реального кода.
             </p>
           </div>
         </div>
@@ -112,7 +112,7 @@
         <div class="bq-grid bq-grid-4">
           <div class="bq-pill">
             <h3>Medical & BioTech</h3>
-            <p>Поддержка диагностики, онкологии, нейровизуализации и биоинформатики.</p>
+            <p>Диагностика, онкология, нейровизуализация, биоинформатика.</p>
           </div>
           <div class="bq-pill">
             <h3>AI & Cognitive Engines</h3>
@@ -124,7 +124,9 @@
           </div>
           <div class="bq-pill">
             <h3>Resilient Ecosystems</h3>
-            <p>Инфраструктуры для консорциумов, лабораторий, университетов и стартапов.</p>
+            <p>
+              Инфраструктуры для консорциумов, лабораторий, университетов и стартапов.
+            </p>
           </div>
         </div>
       </div>
@@ -137,25 +139,28 @@
         <p class="bq-lead">
           Trust Fabric — это слой, где соединяются криптография, инфраструктура и
           человеческая ответственность. Он связывает Root CA, Trust Center, Edge-узлы
-          и клиенты (iOS, веб, исследовательские платформы).
+          и клиентские системы (iOS/Web/Research).
         </p>
+
         <div class="bq-grid bq-grid-3 bq-trust-grid">
           <div class="bq-card bq-card-outline">
             <h3>Root & Vault Layer</h3>
             <ul>
               <li>Root CA на Raspberry Pi + зашифрованный SSD</li>
-              <li>Оффлайн-режим · минимальное включение</li>
+              <li>Оффлайн-режим · минимальные окна включения</li>
               <li>Хранение мастер-ключей и политик</li>
             </ul>
           </div>
+
           <div class="bq-card bq-card-outline">
             <h3>Trust Center Layer</h3>
             <ul>
               <li>Intermediate CA & issuing CA</li>
               <li>GraphQL / REST Trust API</li>
-              <li>DID Registry · Audit · CRL / OCSP</li>
+              <li>DID Registry · Audit · CRL/OCSP</li>
             </ul>
           </div>
+
           <div class="bq-card bq-card-outline">
             <h3>Edge & Client Layer</h3>
             <ul>
@@ -173,48 +178,51 @@
       <div class="bq-container">
         <h2>Connected Ecosystem</h2>
         <p class="bq-lead">
-          BioQCore не живёт в вакууме. Он соединяется с другими контурами — от
-          блокчейн-инфраструктур до космических исследовательских проектов.
+          BioQCore соединяется с другими контурами — от блокчейн-инфраструктур
+          до космических исследовательских проектов.
         </p>
+
         <div class="bq-grid bq-grid-3">
-          <div class="bq-card">
-            <h3>WWBTC</h3>
-            <p>
-              WideWorldBlockchainTechnologiesCommunity — слой распределённых
-              идентичностей, токенизации и zk-инфраструктуры, интегрируемый
-              с Trust Fabric BioQCore.
-            </p>
-          </div>
+
           <div class="bq-card">
             <h3>CosmicFutureToDay</h3>
             <p>
-              Космический вектор: долгосрочная стратегия для науки, инженерии,
-              устойчивой экономики и культурных проектов.
+              Космический вектор развития: стратегическая инженерия, устойчивые
+              экономические модели и культурные инициативы.
             </p>
           </div>
+
           <div class="bq-card">
             <h3>Research Alliances</h3>
             <p>
-              Партнёрства с лабораториями, университетами и клиниками для
-              совместных исследований и пилотных проектов.
+              Партнёрства с лабораториями, университетами и клиниками:
+              совместные исследования и прототипы.
+            </p>
+          </div>
+
+          <div class="bq-card">
+            <h3>Future Integrations</h3>
+            <p>
+              Расширяемая структура для подключения AI-систем, образовательных и
+              гуманитарных платформ, независимых исследовательских центров.
             </p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Architecture (docs hook) -->
+    <!-- Architecture -->
     <section class="bq-section" id="architecture">
       <div class="bq-container">
         <h2>Architecture & Docs</h2>
         <p class="bq-lead">
-          Архитектура оформляется как живой документ. Техническая документация,
-          схемы и дорожные карты доступны в открытом формате.
+          Архитектура оформляется как живой документ: технические схемы,
+          документы и дорожные карты доступны в открытом формате.
         </p>
         <div class="bq-doc-links">
           <a href="docs/ARCHITECTURE.html" class="bq-doc-link">System Architecture (soon)</a>
           <a href="docs/PLATFORM_ROADMAP.html" class="bq-doc-link">Platform Roadmap (soon)</a>
-          <a href="https://github.com/..." class="bq-doc-link">GitHub (internal prototype)</a>
+          <a href="https://github.com/cryptoinsider1/bioqcore.org.github.io" class="bq-doc-link">GitHub Repository</a>
         </div>
       </div>
     </section>
@@ -224,35 +232,39 @@
       <div class="bq-container">
         <h2>Roadmap · Phase 0 → Phase 3</h2>
         <div class="bq-roadmap">
+
           <div class="bq-roadmap-item">
             <h3>Phase 0 — Foundations</h3>
             <p>
               Статический сайт, архитектурные документы, лабораторная PKI
-              (Root CA на Raspberry, Intermediate CA, первые эксперименты с
-              MikroTik и VPN).
+              (Root CA на Raspberry, Intermediate CA, сеть с MikroTik, VPN).
             </p>
           </div>
+
           <div class="bq-roadmap-item">
             <h3>Phase 1 — Trust Center Prototype</h3>
             <p>
               BioQCore Trust Center: GraphQL API, issuing CA, интеграция с
-              iOS агентом и внутренними сервисами.
+              iOS-агентом и внутренними сервисами.
             </p>
           </div>
+
           <div class="bq-roadmap-item">
             <h3>Phase 2 — Ecosystem Integration</h3>
             <p>
-              Связка с WWBTC, CosmicFutureToDay, подключение лабораторий и
-              партнёрских проектов.
+              Связка с исследовательскими проектами, образовательными системами,
+              гуманитарными платформами и инженерными контурами.
             </p>
           </div>
+
           <div class="bq-roadmap-item">
             <h3>Phase 3 — Production-grade Consortium</h3>
             <p>
-              Масштабируемая экосистема с чёткой PKI, аудитацией, отказоустойчивостью
-              и многоуровневой защитой.
+              Масштабируемая экосистема с чёткой PKI, аудитацией,
+              отказоустойчивостью и многоуровневой защитой.
             </p>
           </div>
+
         </div>
       </div>
     </section>
@@ -262,14 +274,11 @@
       <div class="bq-container">
         <h2>Contact & Collaboration</h2>
         <p class="bq-lead">
-          На текущем этапе BioQCore находится в фазе интенсивных исследований и
-          архитектурного дизайна. Если вы представляете лабораторию, университет,
-          клинику или технологическую компанию — потенциально возможны пилотные
-          проекты, совместные исследования и консорциумы.
+          BioQCore находится в фазе активных исследований.
+          Возможны сотрудничества с лабораториями, университетами и компаниями.
         </p>
         <div class="bq-contact">
-          <p>Для связи и первых обсуждений:</p>
-          <p><strong>Email:</strong> contact@bioqcore.org (пример)</p>
+          <p><strong>Email:</strong> contact@bioqcore.org</p>
           <p><strong>PGP / Secure Channel:</strong> будет опубликован в Trust Center.</p>
         </div>
       </div>
@@ -278,8 +287,7 @@
 
   <footer class="bq-footer">
     <div class="bq-container bq-footer-inner">
-      <span>© BioQCore Consortium · Research & Infrastructure</span>
-      <span>Phase 0 · Draft Infrastructure</span>
+      <span>© BioQCore Consortium · Research & Infrastructure · 2025</span>
     </div>
   </footer>
 
