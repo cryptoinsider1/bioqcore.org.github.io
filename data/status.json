@@ -1,0 +1,13 @@
+{
+  "project": "BioQCore",
+  "site": "online",
+  "trust_center": "in_design",
+  "trust_center_label": "Trust Center status",
+  "ios_agent": "prototype_planned",
+  "pki_did": "lab_phase",
+  "research_partnerships": "open_for_discussion",
+  "clinical_product": "not_launched",
+  "token_dao": "not_active_future_optional",
+  "last_updated": "2026-06-13",
+  "message": "Trust Center is not yet connected. Current phase: design/prototype. No production certificates are issued to third parties unless explicitly documented."
+}
