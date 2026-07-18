@@ -1,11 +1,22 @@
-# BioQCore Security Policy
+# Security Policy
 
-## Vulnerability Reporting
-If you discover a vulnerability, please report to: **security@bioqcore.org**.  
-We will respond within 48 hours and work to fix the issue.
+Version: 1.0.0-rc  
+Date: 2026-06-13
 
-## Protection measures
-- Daily automated vulnerability scans via GitHub Actions.
-- Use HTTPS (TLS 1.3) for all connections.
-- Content Security Policy (CSP) to protect against XSS.
-- Regular key rotation and dependency checking.
+Report suspected vulnerabilities to contact@bioqcore.org with subject `Security Disclosure`.
+
+## Allowed
+
+- Non-destructive vulnerability reports.
+- Security header issues.
+- Public static site issues.
+- Accidental exposed secret reports.
+
+## Not allowed
+
+- Denial-of-service tests.
+- Social engineering.
+- Malware, persistence or exfiltration.
+- Attempting to access patient data or private accounts.
+
+No bounty program is active unless explicitly announced.

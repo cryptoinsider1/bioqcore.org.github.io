@@ -1,0 +1,62 @@
+[
+  {
+    "phase": "Phase 0",
+    "title": "Foundations",
+    "status": "Active",
+    "items": [
+      "Static public site",
+      "Legal/governance pages",
+      "Privacy / Terms / Security",
+      "Trust Fabric architecture",
+      "GitHub docs",
+      "Secure contact path"
+    ]
+  },
+  {
+    "phase": "Phase 1",
+    "title": "Trust Center Prototype",
+    "status": "In Design",
+    "items": [
+      "Trust Center skeleton",
+      "Status API",
+      "Audit log model",
+      "DID/PKI lab notes",
+      "Public security policy"
+    ]
+  },
+  {
+    "phase": "Phase 2",
+    "title": "Research Collaboration",
+    "status": "Planned",
+    "items": [
+      "Partner intake",
+      "Research docs",
+      "Grant application pack",
+      "Lightweight data governance framework",
+      "No patient data intake unless compliant environment exists"
+    ]
+  },
+  {
+    "phase": "Phase 3",
+    "title": "Consortium Readiness",
+    "status": "Planned",
+    "items": [
+      "Formal partner registry",
+      "Council of Seven page",
+      "Annual transparency report",
+      "Audited grant register",
+      "Production-grade trust infrastructure"
+    ]
+  },
+  {
+    "phase": "Future",
+    "title": "Optional Mechanisms",
+    "status": "Legal Review Required",
+    "items": [
+      "DAO advisory layer",
+      "Tokenization only after legal/regulatory review",
+      "SaaS prototypes",
+      "International legal envelopes"
+    ]
+  }
+]
