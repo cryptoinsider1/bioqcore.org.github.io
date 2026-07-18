@@ -1,3 +1,6 @@
 CheckDoctype: true
 CheckLinks: true
 IgnoreAltMissing: true
+
+DirectoryPath: "."
+DirectoryIndex: "index.html"

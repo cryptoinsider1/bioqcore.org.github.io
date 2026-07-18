@@ -1,18 +1,11 @@
 // --- BioQCore Web Security Layer v1.1 ---
 
 document.addEventListener("DOMContentLoaded", () => {
-    const sanitize = (str) =>
-        str
-            .replace(/&/g, "&amp;")
-            .replace(/</g, "&lt;")
-            .replace(/>/g, "&gt;")
-            .replace(/"/g, "&quot;")
-            .replace(/'/g, "&#x27;")
-            .replace(/\//g, "&#x2F;");
-
     document.querySelectorAll("[data-sanitize]").forEach((el) => {
         const content = el.textContent;
-        if (content) el.innerHTML = sanitize(content);
+        if (content !== null) {
+            el.textContent = content;
+        }
     });
 });
 

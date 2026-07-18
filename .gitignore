@@ -76,3 +76,5 @@ site/
 # BioQCore Web security
 src/js/security.min.js
 src/css/main.min.css
+
+tmp/
