@@ -6,7 +6,7 @@ info:
     Trust Center issuing CA, DID registry, audit subsystem and PQC support.
 
 servers:
-  - url: https://trust.bioqcore.org
+  - url: https://trust.example.bioqcore.org
 
 paths:
   /health:
