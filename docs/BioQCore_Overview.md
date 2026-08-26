@@ -1,6 +1,6 @@
 # BioQCore Overview
 
-Version: 1.0.0-rc
+Version: 1.0.2-rc.1
 Document status: Public current overview
 Last reviewed: 2026-08-26
 
