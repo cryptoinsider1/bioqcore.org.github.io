@@ -1,4 +1,4 @@
-name: HTML Validate
+name: Release Validation
 
 on:
   push:
@@ -6,13 +6,33 @@ on:
   pull_request:
 
 jobs:
-  html-validate:
+  release-validate:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Install validator
-        run: sudo npm install -g html-validate
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
 
-      - name: Run HTML validation
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Run BioQCore release validator
+        run: python3 validate_release.py
+
+      - name: Check whitespace
+        run: git diff-tree --check HEAD
+
+      - name: Install HTML validator
+        run: npm install --global html-validate
+
+      - name: Validate HTML
         run: html-validate "**/*.html" --config .htmlvalidate.json
