@@ -288,6 +288,18 @@ def check_local_references() -> None:
                     f"{path.name}: broken local reference "
                     f"{ref!r}"
                 )
+                continue
+
+            try:
+                target.relative_to(ROOT)
+            except ValueError:
+                continue
+
+            if not is_tracked_by_git(target):
+                fail(
+                    f"{path.name}: local reference points to "
+                    f"untracked file {ref!r}"
+                )
 
 
 def check_page_invariants() -> None:
@@ -429,6 +441,21 @@ def main() -> int:
     print("RESULT: PASS")
     return 0
 
+
+def is_tracked_by_git(path: Path) -> bool:
+    try:
+        result = subprocess.run(
+            ["git", "ls-files", "--error-unmatch", str(path.relative_to(ROOT))],
+            cwd=ROOT,
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+    except FileNotFoundError:
+        warn("git not installed; tracked-file check skipped")
+        return True
+
+    return result.returncode == 0
 
 if __name__ == "__main__":
     sys.exit(main())
