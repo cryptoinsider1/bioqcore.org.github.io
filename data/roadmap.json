@@ -1,62 +1,76 @@
 [
   {
     "phase": "Phase 0",
-    "title": "Foundations",
-    "status": "Active",
+    "horizon": "Completed / Maintained",
+    "period": "Through 2026 Q2",
+    "title": "Public Foundations",
+    "status": "Completed",
     "items": [
-      "Static public site",
-      "Legal/governance pages",
-      "Privacy / Terms / Security",
-      "Trust Fabric architecture",
-      "GitHub docs",
-      "Secure contact path"
+      "Static public website foundation",
+      "Mission and research positioning",
+      "Governance and public policy pages",
+      "Privacy / Terms / Security baseline",
+      "Trust Fabric architecture baseline",
+      "Public documentation structure",
+      "Controlled public contact path"
     ]
   },
   {
     "phase": "Phase 1",
-    "title": "Trust Center Prototype",
-    "status": "In Design",
+    "horizon": "Current",
+    "period": "2026 Q3",
+    "title": "Trust and Institutional Readiness",
+    "status": "Active",
     "items": [
-      "Trust Center skeleton",
-      "Status API",
+      "Public website hardening and consistency review",
+      "Trust Center architecture and prototype work",
+      "Status and evidence model",
       "Audit log model",
-      "DID/PKI lab notes",
-      "Public security policy"
+      "PKI / DID laboratory work",
+      "Governance and legal-structure preparation",
+      "Research partnership discussions"
     ]
   },
   {
     "phase": "Phase 2",
-    "title": "Research Collaboration",
+    "horizon": "Next",
+    "period": "2026 Q4 – 2027 Q1",
+    "title": "Research Collaboration Infrastructure",
     "status": "Planned",
     "items": [
-      "Partner intake",
-      "Research docs",
-      "Grant application pack",
-      "Lightweight data governance framework",
-      "No patient data intake unless compliant environment exists"
+      "Structured partner intake",
+      "Research documentation expansion",
+      "Grant and foundation readiness materials",
+      "Data governance framework",
+      "Trust Center prototype validation",
+      "No patient-data intake unless an appropriate compliant environment exists"
     ]
   },
   {
     "phase": "Phase 3",
-    "title": "Consortium Readiness",
+    "horizon": "Long-term",
+    "period": "2027+",
+    "title": "Consortium Infrastructure",
     "status": "Planned",
     "items": [
-      "Formal partner registry",
-      "Council of Seven page",
-      "Annual transparency report",
-      "Audited grant register",
-      "Production-grade trust infrastructure"
+      "Formal partner and institutional governance mechanisms",
+      "Independent oversight framework",
+      "Periodic public transparency reporting",
+      "Grant accountability mechanisms where applicable",
+      "Production-grade trust infrastructure where justified by validated use cases"
     ]
   },
   {
     "phase": "Future",
+    "horizon": "Conditional",
+    "period": "No committed date",
     "title": "Optional Mechanisms",
-    "status": "Legal Review Required",
+    "status": "Conditional",
     "items": [
-      "DAO advisory layer",
-      "Tokenization only after legal/regulatory review",
-      "SaaS prototypes",
-      "International legal envelopes"
+      "Additional jurisdiction-specific legal structures",
+      "Distributed governance mechanisms where functionally justified",
+      "Digital-asset mechanisms only if a legitimate use case and regulatory basis exist",
+      "Additional software and service models subject to validation"
     ]
   }
 ]

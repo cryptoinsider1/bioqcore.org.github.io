@@ -59,9 +59,19 @@ zap-report.md
 # Generated docs
 src/js/docs/ru/
 src/js/docs/en/
-docs/
 out/
 site/
+
+# Public documentation corpus
+docs/*
+!docs/Architecture_Overview.md
+!docs/BioQCore_Overview.md
+!docs/BioQCore_WebPlatform_TZ_v0.1.md
+!docs/CHANGELOG.md
+!docs/Governance_Summary.md
+!docs/Grant_Transparency_Policy.md
+!docs/Partner_Intake_Guide.md
+!docs/site_tz_v0.9.md
 
 # SVG/PNG temporary exports
 *.bak

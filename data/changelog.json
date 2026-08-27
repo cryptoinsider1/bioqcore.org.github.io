@@ -1,5 +1,10 @@
 [
   {
+    "date": "2026-08-26",
+    "version": "v1.0.2-rc.1",
+    "entry": "Public corpus hardening, governance/status alignment, tracked documentation corpus and release validation."
+  },
+  {
     "date": "2026-06-13",
     "version": "v1.0.0-rc",
     "entry": "Trust-first public site foundation: mission, governance, policies, roadmap, transparency, no-patient-data boundaries."
